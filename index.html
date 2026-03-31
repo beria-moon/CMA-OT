@@ -54,38 +54,31 @@ Hierarchical Expert Supervision</title>
 <main class="container mx-auto my-10 px-4 space-y-16">
 
     <!-- Abstract -->
-   <section id="abstract" class="max-w-5xl mx-auto my-12 px-6">
-    <div class="bg-white rounded-3xl shadow-[0_15px_40px_rgba(0,0,0,0.05)] overflow-hidden border border-gray-100">
-        <div class="flex flex-col md:flex-row">
-            <div class="bg-gray-50 md:w-48 flex flex-col items-center justify-center py-8 border-r border-gray-100">
-                <div class="p-3 bg-indigo-100 rounded-2xl mb-3">
-                    <svg class="h-8 w-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                </div>
-                <h2 class="text-xl font-bold tracking-widest uppercase text-gray-400 [writing-mode:vertical-lr] md:rotate-180 hidden md:block">Abstract</h2>
-                <h2 class="text-2xl font-bold text-gray-800 md:hidden">Abstract</h2>
-            </div>
+ <section id="abstract" class="bg-white p-8 rounded-xl shadow-md">
 
-            <div class="p-8 md:p-12 flex-1">
-                <p class="text-gray-600 leading-loose text-lg text-justify italic mb-6 border-b border-gray-50 pb-6">
-                    Dance-to-Music (D2M) generation aims to synthesize music that aligns rhythmically and stylistically with dance videos. 
-                </p>
-                <div class="text-gray-700 leading-relaxed text-lg space-y-4">
-                    <p>
-                        Existing methods typically rely on sparse dance cues and supervise only the final audio output, leading to semantic gap and insufficient representation.
-                    </p>
-                    <p>
-                        To address these, we propose <span class="px-2 py-1 bg-blue-50 text-blue-700 font-bold rounded">CMA-OT</span>, a framework leveraging a pre-trained music expert for <span class="underline decoration-pink-400 decoration-2 underline-offset-4">hierarchical supervision</span>.
-                    </p>
-                    <p>
-                        Key contributions include <span class="font-medium text-gray-900">Curriculum-guided multi-scale learning</span> and <span class="font-medium text-gray-900">Scale-aware Fused Gromov-Wasserstein OT (FGW-OT)</span>, achieving state-of-the-art performance in rhythmic synchronization and perceptual quality.
-                    </p>
-                </div>
-            </div>
+        <div class="flex items-center mb-4">
+
+            <svg class="h-8 w-8 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+
+                      d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zM2 12a10 10 0 1120 0 10 10 0 01-20 0z"/>
+
+            </svg>
+
+            <h2 class="text-2xl font-bold">Abstract</h2>
+
         </div>
-    </div>
-</section>
+
+        <p class="text-gray-700 leading-relaxed">
+
+Dance-to-Music (D2M) generation aims to synthesize music that aligns rhythmically and stylistically with dance videos. Existing methods typically rely on sparse dance cues (e.g., rhythm and style) and supervise only the final audio output, which leads to a semantic gap and limits the learning of expressive musical representations.
+
+To address these challenges, we propose CMA-OT (Curriculum-guided Multi-scale representation learning with scale-aware Optimal Transport), a framework that leverages a pre-trained music expert to provide hierarchical supervision across multiple semantic levels. CMA-OT includes: Curriculum-guided multi-scale learning, which progressively transfers musical knowledge from coarse to fine levels for effective representation guidance.
+
+Scale-aware Fused Gromov-Wasserstein Optimal Transport (FGW-OT), which models soft correspondences between hierarchical expert representations and latent generator features. Extensive experiments on benchmark datasets show that CMA-OT achieves state-of-the-art performance in rhythmic synchronization, perceptual quality, and overall music generation.
+
+        </p>
    <!-- Method Pipeline -->
 <section id="method" class="bg-white p-8 rounded-xl shadow-md">
     <div class="flex items-center mb-6">
