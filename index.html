@@ -8,59 +8,45 @@ Hierarchical Expert Supervision</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans">
-
-<header class="relative text-white py-20 shadow-2xl overflow-hidden" style="background: radial-gradient(circle at 50% 50%, #2e1065 0%, #0f172a 100%);">
+<header class="relative text-white py-10 shadow-2xl overflow-hidden" style="background: radial-gradient(circle at 50% 50%, #2e1065 0%, #0f172a 100%);">
     
-    <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div class="absolute inset-0 opacity-5 pointer-events-none">
         <svg class="w-full h-full" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#ffffff" fill-opacity="1" d="M0,192L48,176C96,160,192,128,288,128C384,128,480,160,576,181.3C672,203,768,213,864,197.3C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path fill="#ffffff" d="M0,192L48,176C96,160,192,128,288,128C384,128,480,160,576,181.3C672,203,768,213,864,197.3C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L0,320Z"></path>
         </svg>
     </div>
 
     <div class="container mx-auto px-6 relative z-10 flex flex-col items-center">
-        <div class="bg-white/5 backdrop-blur-xl p-10 md:p-14 rounded-[2.5rem] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] text-center max-w-5xl transition-all hover:border-white/20">
+        <div class="bg-white/5 backdrop-blur-lg p-6 md:p-8 rounded-[1.5rem] border border-white/10 shadow-xl text-center max-w-4xl w-full transition-all hover:border-white/20">
             
-            <div class="flex justify-center items-center gap-6 mb-8">
-                <div class="p-3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-2xl border border-pink-400/30">
-                    <svg class="w-10 h-10 text-pink-300" fill="currentColor" viewBox="0 0 24 24">
+            <div class="flex justify-center items-center gap-4 mb-4">
+                <div class="p-2 bg-pink-500/10 rounded-xl border border-pink-400/20">
+                    <svg class="w-6 h-6 text-pink-300" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6A2,2 0 0,1 10,4A2,2 0 0,1 12,2M15,5V10L12,22L9,10V5H15M3,5H6V11H3V5M18,5H21V11H18V5Z"/>
                     </svg>
                 </div>
                 
-                <div class="flex flex-col items-center opacity-40">
-                    <div class="w-12 h-[2px] bg-gradient-to-r from-pink-400 to-blue-400"></div>
-                    <span class="text-[10px] uppercase tracking-[0.2em] mt-1 font-bold text-blue-200">Alignment</span>
-                </div>
+                <div class="h-4 w-[1px] bg-white/20"></div>
 
-                <div class="p-3 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-400/30">
-                    <svg class="w-10 h-10 text-blue-300 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M13,10H18L12,16L6,10H11V3H13V10M4,19H20V21H4V19Z" />
-                        <rect x="4" y="16" width="2" height="2" fill="currentColor" opacity="0.5"/>
-                        <rect x="8" y="14" width="2" height="4" fill="currentColor" opacity="0.7"/>
-                        <rect x="12" y="12" width="2" height="6" fill="currentColor"/>
-                        <rect x="16" y="15" width="2" height="3" fill="currentColor" opacity="0.8"/>
-                        <rect x="20" y="13" width="2" height="5" fill="currentColor" opacity="0.6"/>
+                <div class="p-2 bg-blue-500/10 rounded-xl border border-blue-400/20">
+                    <svg class="w-6 h-6 text-blue-300 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                        <rect x="4" y="10" width="2" height="8" opacity="0.5"/>
+                        <rect x="8" y="7" width="2" height="11" opacity="0.7"/>
+                        <rect x="12" y="4" width="2" height="14"/>
+                        <rect x="16" y="8" width="2" height="10" opacity="0.8"/>
+                        <rect x="20" y="11" width="2" height="7" opacity="0.6"/>
                     </svg>
                 </div>
             </div>
 
-            <h1 class="text-7xl font-black mb-6 tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-blue-200 drop-shadow-[0_10px_10px_rgba(255,255,255,0.1)]">
+            <h1 class="text-4xl md:text-5xl font-black mb-3 tracking-tight text-white drop-shadow-sm">
                 CMA-OT
             </h1>
             
-            <p class="text-xl md:text-2xl font-light leading-relaxed text-blue-100/90 max-w-4xl mx-auto">
+            <p class="text-lg md:text-xl font-light leading-snug text-blue-100/80">
                 Rethinking <span class="text-pink-300 font-medium">Dance-to-Music</span> Generation with
-                <span class="relative inline-block px-2">
-                    <span class="relative z-10 font-bold text-white uppercase tracking-wide">Hierarchical Expert Supervision</span>
-                    <span class="absolute bottom-1 left-0 w-full h-2 bg-blue-500/30 -z-0 rounded-sm"></span>
-                </span>
+                <span class="font-bold text-white border-b border-blue-400/50">Hierarchical Expert Supervision</span>
             </p>
-
-            <div class="mt-10 flex justify-center gap-2">
-                <div class="w-2 h-2 rounded-full bg-pink-500/50"></div>
-                <div class="w-16 h-2 rounded-full bg-blue-500/30"></div>
-                <div class="w-2 h-2 rounded-full bg-pink-500/50"></div>
-            </div>
         </div>
     </div>
 </header>
