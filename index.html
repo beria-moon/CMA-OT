@@ -34,34 +34,56 @@ Dance-to-Music (D2M) generation aims to synthesize music that aligns rhythmicall
 To address these challenges, we propose CMA-OT (Curriculum-guided Multi-scale representation learning with scale-aware Optimal Transport), a framework that leverages a pre-trained music expert to provide hierarchical supervision across multiple semantic levels. CMA-OT includes: Curriculum-guided multi-scale learning, which progressively transfers musical knowledge from coarse to fine levels for effective representation guidance.
 Scale-aware Fused Gromov-Wasserstein Optimal Transport (FGW-OT), which models soft correspondences between hierarchical expert representations and latent generator features. Extensive experiments on benchmark datasets show that CMA-OT achieves state-of-the-art performance in rhythmic synchronization, perceptual quality, and overall music generation.
         </p>
-    </section>
+   <!-- Method Pipeline -->
+<section id="method" class="bg-white p-8 rounded-xl shadow-md">
+    <div class="flex items-center mb-6">
+        <svg class="h-8 w-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M3 7v4h4V7H3zm14 0v4h4V7h-4zM3 17v4h4v-4H3zm14 0v4h4v-4h-4zM8 7h8v10H8V7z"/>
+        </svg>
+        <h2 class="text-2xl font-bold">Method Pipeline</h2>
+    </div>
 
-    <!-- Method Pipeline -->
-    <section id="method" class="bg-white p-8 rounded-xl shadow-md">
-        <div class="flex items-center mb-4">
-            <svg class="h-8 w-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                      d="M3 7v4h4V7H3zm14 0v4h4V7h-4zM3 17v4h4v-4H3zm14 0v4h4v-4h-4zM8 7h8v10H8V7z"/>
-            </svg>
-            <h2 class="text-2xl font-bold">Method Pipeline</h2>
-        </div>
- **CMA-OT Method Pipeline**
+    <ul class="space-y-6">
+        <li class="flex items-start space-x-3">
+            <img src="专家.svg" class="h-6 w-6 mt-1" alt="Expert Icon">
+            <div>
+                <h3 class="font-semibold text-lg">Hierarchical Expert Supervision</h3>
+                <p>
+                    Leverages a pre-trained multi-scale music expert to provide <strong>coarse-to-fine guidance</strong> 
+                    at macro (global style), meso (melody/harmony), and micro (rhythm/timbre) levels.
+                    <span class="text-green-600 font-medium">Innovation:</span> Bridges the semantic gap beyond sparse dance cues.
+                </p>
+            </div>
+        </li>
 
-**<img src="专家.svg" width="20"> Hierarchical Expert Supervision**
-Leverages a pre-trained multi-scale music expert to provide **coarse-to-fine guidance** at macro (global style), meso (melody/harmony), and micro (rhythm/timbre) levels.
-*Innovation:* Bridges the semantic gap beyond sparse dance cues.
+        <li class="flex items-start space-x-3">
+            <img src="课程.svg" class="h-6 w-6 mt-1" alt="Curriculum Icon">
+            <div>
+                <h3 class="font-semibold text-lg">Curriculum-Guided Multi-Scale Learning</h3>
+                <p>
+                    Transfers knowledge progressively from coarse to fine representations, enabling stable hierarchical learning.
+                    <span class="text-green-600 font-medium">Innovation:</span> Gradual learning improves fine-grained temporal modeling.
+                </p>
+            </div>
+        </li>
 
-**<img src="课程.svg" width="20"> Curriculum-Guided Multi-Scale Learning**
-Transfers knowledge progressively from coarse to fine representations, enabling stable hierarchical learning.
-*Innovation:* Gradual learning improves fine-grained temporal modeling.
+        <li class="flex items-start space-x-3">
+            <img src="音乐图标.svg" class="h-6 w-6 mt-1" alt="Music Icon">
+            <div>
+                <h3 class="font-semibold text-lg">Scale-Aware Alignment with FGW-OT</h3>
+                <p>
+                    Aligns dance and music features across scales using <strong>Fused Gromov-Wasserstein Optimal Transport</strong>, 
+                    preserving temporal coherence while allowing flexible soft alignment.
+                    <span class="text-green-600 font-medium">Innovation:</span> Soft, scale-aware alignment outperforms rigid global matching.
+                </p>
+            </div>
+        </li>
+    </ul>
 
-**<img src="音乐图标.svg" width="20"> Scale-Aware Alignment with FGW-OT**
-Aligns dance and music features across scales using **Fused Gromov-Wasserstein Optimal Transport**, preserving temporal coherence while allowing flexible soft alignment.
-*Innovation:* Soft, scale-aware alignment outperforms rigid global matching.
+    <img src="pipeline.png" alt="Method Pipeline" class="rounded-xl shadow-lg w-2/3 h-auto mt-6 mx-auto">
+</section>
 
-        </p>
-        <img src="pipeline.png" alt="Method Pipeline" class="rounded-xl shadow-lg w-full">
-    </section>
 
     <!-- Generation Results -->
     <section id="results" class="bg-white p-8 rounded-xl shadow-md">
