@@ -31,10 +31,8 @@ Hierarchical Expert Supervision</p>
         </div>
         <p class="text-gray-700 leading-relaxed">
 Dance-to-Music (D2M) generation aims to synthesize music that aligns rhythmically and stylistically with dance videos. Existing methods typically rely on sparse dance cues (e.g., rhythm and style) and supervise only the final audio output, which leads to a semantic gap and limits the learning of expressive musical representations.
-To address these challenges, we propose CMA-OT (Curriculum-guided Multi-scale representation learning with scale-aware Optimal Transport), a framework that leverages a pre-trained music expert to provide hierarchical supervision across multiple semantic levels. CMA-OT includes:
-Curriculum-guided multi-scale learning, which progressively transfers musical knowledge from coarse to fine levels for effective representation guidance.
-Scale-aware Fused Gromov-Wasserstein Optimal Transport (FGW-OT), which models soft correspondences between hierarchical expert representations and latent generator features.
-Extensive experiments on benchmark datasets show that CMA-OT achieves state-of-the-art performance in rhythmic synchronization, perceptual quality, and overall music generation.
+To address these challenges, we propose CMA-OT (Curriculum-guided Multi-scale representation learning with scale-aware Optimal Transport), a framework that leverages a pre-trained music expert to provide hierarchical supervision across multiple semantic levels. CMA-OT includes: Curriculum-guided multi-scale learning, which progressively transfers musical knowledge from coarse to fine levels for effective representation guidance.
+Scale-aware Fused Gromov-Wasserstein Optimal Transport (FGW-OT), which models soft correspondences between hierarchical expert representations and latent generator features. Extensive experiments on benchmark datasets show that CMA-OT achieves state-of-the-art performance in rhythmic synchronization, perceptual quality, and overall music generation.
         </p>
     </section>
 
@@ -47,7 +45,7 @@ Extensive experiments on benchmark datasets show that CMA-OT achieves state-of-t
             </svg>
             <h2 class="text-2xl font-bold">Method Pipeline</h2>
         </div>
-### **CMA-OT Method Pipeline**
+ **CMA-OT Method Pipeline**
 
 **<img src="专家.svg" width="20"> Hierarchical Expert Supervision**
 Leverages a pre-trained multi-scale music expert to provide **coarse-to-fine guidance** at macro (global style), meso (melody/harmony), and micro (rhythm/timbre) levels.
