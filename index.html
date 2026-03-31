@@ -54,31 +54,23 @@ Hierarchical Expert Supervision</title>
 <main class="container mx-auto my-10 px-4 space-y-16">
 
     <!-- Abstract -->
- <section id="abstract" class="bg-white p-8 rounded-xl shadow-md">
+<!-- Abstract Section -->
+<section id="abstract" class="bg-white p-8 rounded-xl shadow-md">
+    <div class="flex items-center mb-4">
+        <svg class="h-8 w-8 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zM2 12a10 10 0 1120 0 10 10 0 01-20 0z"/>
+        </svg>
+        <h2 class="text-2xl font-bold">Abstract</h2>
+    </div>
+    <p class="text-gray-700 leading-relaxed">
+        Dance-to-Music (D2M) generation aims to synthesize music that aligns rhythmically and stylistically with dance videos. Existing methods typically rely on sparse dance cues (e.g., rhythm and style) and supervise only the final audio output, which leads to a semantic gap and limits the learning of expressive musical representations.
 
-        <div class="flex items-center mb-4">
+        To address these challenges, we propose CMA-OT (Curriculum-guided Multi-scale representation learning with scale-aware Optimal Transport), a framework that leverages a pre-trained music expert to provide hierarchical supervision across multiple semantic levels. CMA-OT includes: Curriculum-guided multi-scale learning, which progressively transfers musical knowledge from coarse to fine levels for effective representation guidance.
 
-            <svg class="h-8 w-8 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-
-                      d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zM2 12a10 10 0 1120 0 10 10 0 01-20 0z"/>
-
-            </svg>
-
-            <h2 class="text-2xl font-bold">Abstract</h2>
-
-        </div>
-
-        <p class="text-gray-700 leading-relaxed">
-
-Dance-to-Music (D2M) generation aims to synthesize music that aligns rhythmically and stylistically with dance videos. Existing methods typically rely on sparse dance cues (e.g., rhythm and style) and supervise only the final audio output, which leads to a semantic gap and limits the learning of expressive musical representations.
-
-To address these challenges, we propose CMA-OT (Curriculum-guided Multi-scale representation learning with scale-aware Optimal Transport), a framework that leverages a pre-trained music expert to provide hierarchical supervision across multiple semantic levels. CMA-OT includes: Curriculum-guided multi-scale learning, which progressively transfers musical knowledge from coarse to fine levels for effective representation guidance.
-
-Scale-aware Fused Gromov-Wasserstein Optimal Transport (FGW-OT), which models soft correspondences between hierarchical expert representations and latent generator features. Extensive experiments on benchmark datasets show that CMA-OT achieves state-of-the-art performance in rhythmic synchronization, perceptual quality, and overall music generation.
-
-        </p>
+        Scale-aware Fused Gromov-Wasserstein Optimal Transport (FGW-OT), which models soft correspondences between hierarchical expert representations and latent generator features. Extensive experiments on benchmark datasets show that CMA-OT achieves state-of-the-art performance in rhythmic synchronization, perceptual quality, and overall music generation.
+    </p>
+</section>
    <!-- Method Pipeline -->
 <section id="method" class="bg-white p-8 rounded-xl shadow-md">
     <div class="flex items-center mb-6">
