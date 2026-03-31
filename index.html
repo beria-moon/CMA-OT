@@ -30,7 +30,7 @@ Hierarchical Expert Supervision</p>
             <h2 class="text-2xl font-bold">Abstract</h2>
         </div>
         <p class="text-gray-700 leading-relaxed">
-           Dance-to-Music (D2M) generation aims to synthesize music that aligns rhythmically and stylistically with dance videos. Existing methods typically rely on sparse dance cues (e.g., rhythm and style) and supervise only the final audio output, which leads to a semantic gap and limits the learning of expressive musical representations.
+Dance-to-Music (D2M) generation aims to synthesize music that aligns rhythmically and stylistically with dance videos. Existing methods typically rely on sparse dance cues (e.g., rhythm and style) and supervise only the final audio output, which leads to a semantic gap and limits the learning of expressive musical representations.
 To address these challenges, we propose CMA-OT (Curriculum-guided Multi-scale representation learning with scale-aware Optimal Transport), a framework that leverages a pre-trained music expert to provide hierarchical supervision across multiple semantic levels. CMA-OT includes:
 Curriculum-guided multi-scale learning, which progressively transfers musical knowledge from coarse to fine levels for effective representation guidance.
 Scale-aware Fused Gromov-Wasserstein Optimal Transport (FGW-OT), which models soft correspondences between hierarchical expert representations and latent generator features.
@@ -48,10 +48,26 @@ Extensive experiments on benchmark datasets show that CMA-OT achieves state-of-t
             <h2 class="text-2xl font-bold">Method Pipeline</h2>
         </div>
         <p class="text-gray-700 mb-4">
-            Our CMA-OT model leverages a curriculum-guided multi-scale learning strategy and a scale-aware FGW-OT alignment mechanism.
-            It provides hierarchical supervision from coarse musical structures to fine-grained temporal rhythms.
+        明白了！在 GitHub demo page 上，你可以用 **emoji** 或 **SVG 图标**来增强视觉效果。这里我给你一个示例，把你 pipeline 的三个模块前面加上图标：
+
+---
+
+### **CMA-OT Method Pipeline**
+
+**<img src="icons/music.svg" width="20"> Hierarchical Expert Supervision**
+Leverages a pre-trained multi-scale music expert to provide **coarse-to-fine guidance** at macro (global style), meso (melody/harmony), and micro (rhythm/timbre) levels.
+*Innovation:* Bridges the semantic gap beyond sparse dance cues.
+
+**<img src="icons/graph.svg" width="20"> Curriculum-Guided Multi-Scale Learning**
+Transfers knowledge progressively from coarse to fine representations, enabling stable hierarchical learning.
+*Innovation:* Gradual learning improves fine-grained temporal modeling.
+
+**<img src="icons/link.svg" width="20"> Scale-Aware Alignment with FGW-OT**
+Aligns dance and music features across scales using **Fused Gromov-Wasserstein Optimal Transport**, preserving temporal coherence while allowing flexible soft alignment.
+*Innovation:* Soft, scale-aware alignment outperforms rigid global matching.
+
         </p>
-        <img src="pipeline_placeholder.png" alt="Method Pipeline" class="rounded-xl shadow-lg w-full">
+        <img src="pipeline.png" alt="Method Pipeline" class="rounded-xl shadow-lg w-full">
     </section>
 
     <!-- Generation Results -->
