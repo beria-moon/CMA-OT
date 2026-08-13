@@ -1,44 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CMA-OT: Hierarchical Expert Supervision for Dance-to-Music
+
+Generation</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-100 font-sans">
+
 <header class="relative text-white py-10 shadow-2xl overflow-hidden" style="background: radial-gradient(circle at 50% 50%, #2e1065 0%, #0f172a 100%);">
+
     
+
     <div class="absolute inset-0 opacity-5 pointer-events-none">
+
         <svg class="w-full h-full" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+
             <path fill="#ffffff" d="M0,192L48,176C96,160,192,128,288,128C384,128,480,160,576,181.3C672,203,768,213,864,197.3C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L0,320Z"></path>
+
         </svg>
+
     </div>
 
+
+
     <div class="container mx-auto px-6 relative z-10 flex flex-col items-center">
+
         <div class="bg-white/5 backdrop-blur-lg p-6 md:p-8 rounded-[1.5rem] border border-white/10 shadow-xl text-center max-w-4xl w-full transition-all hover:border-white/20">
+
             
+
             <div class="flex justify-center items-center gap-4 mb-4">
+
                 <div class="p-2 bg-pink-500/10 rounded-xl border border-pink-400/20">
+
                     <svg class="w-6 h-6 text-pink-300" fill="currentColor" viewBox="0 0 24 24">
+
                         <path d="M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6A2,2 0 0,1 10,4A2,2 0 0,1 12,2M15,5V10L12,22L9,10V5H15M3,5H6V11H3V5M18,5H21V11H18V5Z"/>
+
                     </svg>
+
                 </div>
+
                 
+
                 <div class="h-4 w-[1px] bg-white/20"></div>
 
+
+
                 <div class="p-2 bg-blue-500/10 rounded-xl border border-blue-400/20">
+
                     <svg class="w-6 h-6 text-blue-300 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+
                         <rect x="4" y="10" width="2" height="8" opacity="0.5"/>
+
                         <rect x="8" y="7" width="2" height="11" opacity="0.7"/>
+
                         <rect x="12" y="4" width="2" height="14"/>
+
                         <rect x="16" y="8" width="2" height="10" opacity="0.8"/>
+
                         <rect x="20" y="11" width="2" height="7" opacity="0.6"/>
+
                     </svg>
+
                 </div>
+
             </div>
 
+
+
             <h1 class="text-4xl md:text-5xl font-black mb-3 tracking-tight text-white drop-shadow-sm">
+
                 CMA-OT
+
             </h1>
+
             
-            <p class="text-lg md:text-xl font-light leading-snug text-blue-100/80 mb-6">
+
+            <p class="text-lg md:text-xl font-light leading-snug text-blue-100/80">
+
                 <span class="text-pink-300 font-medium">Hierarchical Expert Supervision</span> for
+
                 <span class="font-bold text-white border-b border-blue-400/50">Dance-to-Music</span> Generation
+
             </p>
 
-            <!-- 跳转按钮区域 -->
+        <!-- 跳转按钮区域 -->
             <div class="flex flex-wrap justify-center items-center gap-4">
                 <!-- Paper Link -->
                 <a href="YOUR_PAPER_URL_HERE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white font-medium text-sm transition-all shadow-md hover:shadow-lg backdrop-blur-sm group">
@@ -58,5 +116,923 @@
             </div>
 
         </div>
+
     </div>
+
 </header>
+
+
+
+<main class="container mx-auto my-10 px-4 space-y-16">
+
+
+
+    <!-- Abstract -->
+
+<!-- Abstract Section -->
+
+<section id="abstract" class="bg-white p-8 rounded-xl shadow-md">
+
+    <div class="flex items-center mb-4">
+
+        <svg class="h-8 w-8 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+
+                  d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zM2 12a10 10 0 1120 0 10 10 0 01-20 0z"/>
+
+        </svg>
+
+        <h2 class="text-2xl font-bold">Abstract</h2>
+
+    </div>
+
+    <p class="text-gray-700 leading-relaxed">
+
+        Dance-to-Music (D2M) generation aims to synthesize music that aligns rhythmically and stylistically with dance videos. Existing methods typically rely on sparse dance cues (e.g., rhythm and style) and supervise only the final audio output, which leads to a semantic gap and limits the learning of expressive musical representations.
+
+
+
+        To address these challenges, we propose CMA-OT (Curriculum-guided Multi-scale representation learning with scale-aware Optimal Transport), a framework that leverages a pre-trained music expert to provide hierarchical supervision across multiple semantic levels. CMA-OT includes: Curriculum-guided multi-scale learning, which progressively transfers musical knowledge from coarse to fine levels for effective representation guidance.
+
+
+
+        Scale-aware Fused Gromov-Wasserstein Optimal Transport (FGW-OT), which models soft correspondences between hierarchical expert representations and latent generator features. Extensive experiments on benchmark datasets show that CMA-OT achieves state-of-the-art performance in rhythmic synchronization, perceptual quality, and overall music generation.
+
+    </p>
+
+</section>
+
+   <!-- Method Pipeline -->
+
+<section id="method" class="bg-white p-8 rounded-xl shadow-md">
+
+    <div class="flex items-center mb-6">
+
+        <svg class="h-8 w-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+
+                  d="M3 7v4h4V7H3zm14 0v4h4V7h-4zM3 17v4h4v-4H3zm14 0v4h4v-4h-4zM8 7h8v10H8V7z"/>
+
+        </svg>
+
+        <h2 class="text-2xl font-bold">Method Pipeline</h2>
+
+    </div>
+
+
+
+    <ul class="space-y-6">
+
+        <li class="flex items-start space-x-3">
+
+            <img src="zhuanjia.svg" class="h-8 w-8 mt-1" alt="Expert Icon">
+
+            <div>
+
+                <h3 class="font-semibold text-lg">Hierarchical Expert Supervision</h3>
+
+                <p>
+
+                    Leverages a pre-trained multi-scale music expert to provide <strong>coarse-to-fine hierarchical guidance</strong> 
+
+                   to address the insufficient representation learning caused by semantic gap.
+
+                    <span class="text-green-600 font-medium">Innovation:</span> Bridges the semantic gap beyond sparse dance cues.
+
+                </p>
+
+            </div>
+
+        </li>
+
+
+
+        <li class="flex items-start space-x-3">
+
+            <img src="kecheng.svg" class="h-8 w-8 mt-1" alt="Curriculum Icon">
+
+            <div>
+
+                <h3 class="font-semibold text-lg">Curriculum-Guided Multi-Scale Learning</h3>
+
+                <p>
+
+                    Progressively distill hierarchical knowledge from a pre-trained music expert, aiming to overcome the difficulty of modeling fine-grained temporal 
+
+semantics under global guidance.
+
+                    <span class="text-green-600 font-medium">Innovation:</span> Gradual learning improves fine-grained temporal modeling.
+
+                </p>
+
+            </div>
+
+        </li>
+
+
+
+        <li class="flex items-start space-x-3">
+
+            <img src="music.svg" class="h-8 w-8 mt-1" alt="Music Icon">
+
+            <div>
+
+                <h3 class="font-semibold text-lg">Scale-Aware Alignment with FGW-OT</h3>
+
+                <p>
+
+                    Aligns dance and music features across scales using Fused Gromov-Wasserstein Optimal Transport, facilitates flexible alignment while preserving both structural consistency and semantic coherence between music and dance.
+
+                    <span class="text-green-600 font-medium">Innovation:</span> Soft, scale-aware alignment outperforms rigid global matching.
+
+                </p>
+
+            </div>
+
+        </li>
+
+    </ul>
+
+
+
+    <img src="pipeline.svg" alt="Method Pipeline" class="rounded-xl shadow-lg w-2/3 h-auto mt-6 mx-auto">
+
+</section>
+
+
+
+
+
+    <!-- Generation Results -->
+
+    <section id="results" class="bg-white p-8 rounded-xl shadow-md">
+
+        <div class="flex items-center mb-4">
+
+            <svg class="h-8 w-8 text-pink-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+
+                      d="M9 19V6h13M4 6h1m0 0v12m0-12h1"/>
+
+            </svg>
+
+            <h2 class="text-2xl font-bold">Generation Results</h2>
+
+        </div>
+
+
+
+        <p class="text-gray-700 mb-4">
+
+         Generation Comparison with SOTA Dance-to-Music Methods.
+
+        </p>
+
+
+
+        <!-- Dynamic Grid -->
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+
+
+
+            <!-- Repeat this block for each generated example -->
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">D2M_GAN</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="1_1.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CDCD</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="2_1.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">LORIS</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="3_1.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">Textual_Inv</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="5_1.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">MotionComposer</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="4_1.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CMA-OT (Ours)</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="6_1.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+                        <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">D2M_GAN</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="1_2.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CDCD</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="2_2.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">LORIS</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="3_2.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">Textual_Inv</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="5_2.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">MotionComposer</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="4_2.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CMA-OT (Ours)</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="6_2.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">D2M_GAN</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="1_3.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CDCD</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="2_3.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">LORIS</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="3_3.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">Textual_Inv</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="5_3.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">MotionComposer</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="4_3.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CMA-OT (Ours)</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="6_3.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+                        <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">D2M_GAN</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="1_4.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CDCD</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="2_4.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">LORIS</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="3_4.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">Textual_Inv</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="5_4.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">MotionComposer</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="4_4.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CMA-OT (Ours)</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="6_4.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">D2M_GAN</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="1_5.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CDCD</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="2_5.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">LORIS</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="3_5.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">Textual_Inv</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="5_5.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">MotionComposer</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="4_5.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CMA-OT (Ours)</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="6_5.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">D2M_GAN</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="1_6.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CDCD</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="2_6.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">LORIS</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="3_6.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">Textual_Inv</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="5_6.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">MotionComposer</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="4_6.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CMA-OT (Ours)</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="6_6.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">D2M_GAN</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="1_7.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CDCD</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="2_7.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">LORIS</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="3_7.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">Textual_Inv</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="5_7.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">MotionComposer</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="4_7.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CMA-OT (Ours)</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="6_7.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+                        <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">D2M_GAN</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="1_8.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CDCD</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="2_8.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">LORIS</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="3_8.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">Textual_Inv</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="5_8.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">MotionComposer</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="4_8.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+
+            <div class="bg-gray-50 p-3 rounded-xl shadow-md">
+
+                <h3 class="font-semibold text-center mb-2">CMA-OT (Ours)</h3>
+
+                <video controls class="w-full rounded">
+
+                    <source src="6_8.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+            <!-- End repeat block -->
+
+
+
+        </div>
+
+    </section>
+
+    <footer class="relative text-white py-12 mt-20 overflow-hidden" style="background: radial-gradient(circle at 50% 0%, #2e1065 0%, #0f172a 100%);">
+
+    
+
+    <div class="absolute inset-0 opacity-5 pointer-events-none transform rotate-180">
+
+        <svg class="w-full h-full" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+
+            <path fill="#ffffff" d="M0,192L48,176C96,160,192,128,288,128C384,128,480,160,576,181.3C672,203,768,213,864,197.3C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L0,320Z"></path>
+
+        </svg>
+
+    </div>
+
+
+
+    <div class="container mx-auto px-6 relative z-10 flex flex-col items-center">
+
+        <div class="bg-white/5 backdrop-blur-md px-8 py-4 rounded-full border border-white/10 shadow-2xl flex flex-col md:flex-row items-center gap-4 transition-all hover:border-white/20">
+
+            
+
+            <div class="flex items-center gap-2 opacity-60">
+
+                <svg class="w-4 h-4 text-pink-300" fill="currentColor" viewBox="0 0 24 24">
+
+                    <path d="M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6A2,2 0 0,1 10,4A2,2 0 0,1 12,2M15,5V10L12,22L9,10V5H15M3,5H6V11H3V5M18,5H21V11H18V5Z"/>
+
+                </svg>
+
+                <div class="w-px h-3 bg-white/20"></div>
+
+                <svg class="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 24 24">
+
+                    <rect x="4" y="10" width="2" height="8"/><rect x="8" y="7" width="2" height="11"/><rect x="12" y="4" width="2" height="14"/><rect x="16" y="8" width="2" height="10"/><rect x="20" y="11" width="2" height="7"/>
+
+                </svg>
+
+            </div>
+
+
+
+            <p class="text-sm md:text-base font-light tracking-wide text-blue-100/70">
+
+                © 2026 <span class="font-bold text-white tracking-tighter">CMA-OT</span>. All rights reserved.
+
+            </p>
+
+        </div>
+
+        
+
+        <p class="mt-4 text-[10px] uppercase tracking-[0.3em] text-white/20 font-medium">
+
+            Rethinking Dance-to-Music Generation
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+</main>
+
+
+
+</body>
+
+</html>
