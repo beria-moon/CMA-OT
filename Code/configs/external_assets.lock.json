@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "runtime": {
+    "python": "3.11.6",
+    "pytorch": "2.6.0+cu124",
+    "cuda_runtime": "12.4"
+  },
+  "mert": {
+    "repo_id": "m-a-p/MERT-v1-330M",
+    "revision": "5240c2708a5acaee1007f43fb9735c7dcd0b78c9",
+    "source_repo": "https://github.com/yizhilll/MERT.git",
+    "source_commit": "391062e4c384aaad4e5a992be339ef70769dbd6f",
+    "transformers": "4.27.1",
+    "hidden_state": 12,
+    "sample_rate": 24000,
+    "hidden_size": 1024,
+    "files": {
+      "config.json": "a5b40f9db03c84f29e3114abe813a9226178d5437b517d45cd4c2924ac3d0ce0",
+      "preprocessor_config.json": "c623b903eb1967474b27522975cfb81638e265df99aa640d2c0bd87a987ab538",
+      "configuration_MERT.py": "ae0ec2bab8f59c724ba9878a7c20b67210189536ea62d34a56775968e9decb03",
+      "modeling_MERT.py": "6c3ee73cef6f0c30ef494f88d96f891fa6925ffe663fa391b512f4b57abecc6c",
+      "pytorch_model.bin": "0c03774d821a6ad972cb48220b128a10ebea2c790116bd0fd35e5a013f8017f6"
+    }
+  },
+  "diffrhythm_vae": {
+    "repo_id": "ASLP-lab/DiffRhythm-vae",
+    "revision": "74e2afacfd91dd1b96662c96dcef763c1258768b",
+    "license": "stable-audio-community",
+    "sample_rate": 44100,
+    "latent_dim": 64,
+    "downsampling_ratio": 2048,
+    "files": {
+      "vae_config.json": "56a478261e94359d51c91d627745c4a4775e85495f6d48a7c2201cdf54fb4bce",
+      "vae_model.safetensors": "1a83d2d42e4c7a86de6276183d2ad58dc0dba95785c841f8fbdeb3ef6be45812"
+    }
+  },
+  "inference_decoder": {
+    "status": "release_blocked_until_torchscript_decoder_is_pinned",
+    "source_repo_id": "ASLP-lab/DiffRhythm-vae",
+    "source_revision": "74e2afacfd91dd1b96662c96dcef763c1258768b",
+    "format": "torchscript",
+    "file_sha256": null,
+    "release_requirement": "Before release, export or obtain the exact authorized TorchScript decoder exposing decode_export, then run tools/pin_inference_decoder.py and commit the updated lock file."
+  },
+  "jukebox": {
+    "status": "release_blocked_until_checkpoint_is_pinned",
+    "source_repo": "https://github.com/openai/jukebox.git",
+    "source_commit": "08efbbc1d4ed1a3cef96e08a931944c8b4d63bb3",
+    "transformers": "4.49.0",
+    "sample_rate": 44100,
+    "levels": ["bottom", "middle", "top"],
+    "feature_dim": 64,
+    "model_id_or_path": null,
+    "revision": null,
+    "checkpoint_tree_sha256": null,
+    "release_requirement": "Before release, run tools/pin_jukebox_checkpoint.py on the exact compatible checkpoint and commit the updated lock file."
+  }
+}

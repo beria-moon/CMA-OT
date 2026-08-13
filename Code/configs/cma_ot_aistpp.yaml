@@ -1,0 +1,20 @@
+model:
+  latent_dim: 64
+  dim: 768
+  depth: 12
+  heads: 12
+  dim_head: 64
+  ff_mult: 6
+  style_dim: 512
+  max_frames: 108
+dance:
+  num_joints: 17
+  output_dim: 512
+train:
+  seed: 42
+  epochs: 200
+  batch_size: 4
+  learning_rate: 0.0001
+  grad_accumulation_steps: 1
+  max_grad_norm: 1.0
+  num_workers: 4
