@@ -10,6 +10,17 @@ python -m pip install -r requirements.txt
 
 The requirement files pin direct package versions and the CUDA 12.4 PyTorch wheel index. Use the separate MERT environment specified in `docs/external_versions.md`.
 
+## External expert repositories
+
+- [OpenAI Jukebox](https://github.com/openai/jukebox) — multi-scale VQ-VAE teacher used to extract bottom/middle/top features.
+- [MERT](https://github.com/yizhilll/MERT) — music representation model used for the MERT baseline and ablations.
+- [MERT-v1-330M model card](https://huggingface.co/m-a-p/MERT-v1-330M) — download the exact revision fixed in `configs/external_assets.lock.json`.
+
+## Datasets
+
+- [AIST++ Dataset](https://google.github.io/aistplusplus_dataset/download.html) — official download page for the paired dance-motion and music dataset. Before downloading video, music, or annotations, read and accept the [AIST Dance Video Database Terms of Use](https://aistdancedb.ongaaccel.jp/terms-of-use/).
+- [TikTok Dance-Music Dataset](https://github.com/L-YeZhu/D2M-GAN#32-tiktok-dance-music-dataset) — official D2M-GAN dataset instructions; see the [dataset directory](https://github.com/L-YeZhu/D2M-GAN/tree/main/dataset) for the released metadata and download guidance.
+
 ## Expert feature extraction
 
 CMA-OT training requires Jukebox bottom/middle/top VQ-VAE codebook embeddings. The parameterized scripts are in `tools/`; use the matching command templates:
